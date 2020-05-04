@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode');
 const temperature = require('./utils/temperature');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'hbs');
 const homeDirectryPath = path.join(__dirname, '../public');
@@ -79,7 +80,7 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log(`Express is up and running`);
 });
 

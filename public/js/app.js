@@ -6,7 +6,7 @@ document.querySelector('.form').addEventListener('submit', (event)=>{
     const messageOne = document.querySelector('#message-1');
     const messageTwo = document.querySelector('#message-2');
     messageOne.textContent = "Loading...";
-    fetch(`http://127.0.0.1:3000/weather?address=${input}`, {headers:{'content-type': 'application/json'}}).then(response=>{
+    fetch(`/weather?address=${input}`, {headers:{'content-type': 'application/json'}}).then(response=>{
         //console.log(response);
         response.json().then(res=>{
             if(res.error) {
